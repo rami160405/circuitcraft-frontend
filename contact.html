@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CircuitCraft | Contact & Account</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body class="contact-page">
+  <header>
+    <h1>CircuitCraft Account</h1>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="builder.html">Builder</a></li>
+        <li><a href="tutorial.html">Tutorials</a></li>
+        <li><a href="games.html">Games</a></li>
+        <li><a href="contact.html" id="accountLink" class="active">Account</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="account-container">
+    <!-- ===== AUTH PANEL ===== -->
+    <section class="auth-panel" id="authPanel">
+      <div class="tabs">
+        <button id="signUpTab" class="active">Sign Up</button>
+        <button id="loginTab">Log In</button>
+      </div>
+
+      <!-- Sign Up form -->
+      <form id="signUpForm" class="form active">
+        <input type="text" id="signupName" placeholder="Name" required>
+        <input type="email" id="signupEmail" placeholder="Email" required>
+        <div class="password-container">
+          <input type="password" id="signupPassword" placeholder="Password" required>
+          <span class="password-toggle" id="signupPasswordToggle">
+            <svg class="eye-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+              <circle cx="12" cy="12" r="3"/>
+            </svg>
+          </span>
+        </div>
+        <div id="signupPasswordError" class="password-error"></div>
+        <button type="submit">Create Account</button>
+      </form>
+
+      <!-- Log In form -->
+      <form id="loginForm" class="form">
+        <input type="email" id="loginEmail" placeholder="Email" required>
+        <div class="password-container">
+          <input type="password" id="loginPassword" placeholder="Password" required>
+          <span class="password-toggle" id="loginPasswordToggle">
+            <svg class="eye-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+              <circle cx="12" cy="12" r="3"/>
+            </svg>
+          </span>
+        </div>
+        <div id="loginPasswordError" class="password-error"></div>
+        <button type="submit">Login</button>
+      </form>
+    </section>
+
+    <!-- ===== WELCOME MESSAGE ===== -->
+    <section id="welcomeSection" class="welcome-panel hidden">
+      <h2>Welcome back, <span id="userName">User</span>!</h2>
+      <p>You're now signed in and can access all features.</p>
+    </section>
+
+    <div id="react-equations" style="min-height: 50px; margin: 20px 0;"></div>
+
+    <!-- ===== CONTACT PANEL ===== -->
+    <section class="contact-panel">
+      <!-- Locked message -->
+      <div id="contactLocked" class="contact-text">
+        🔒 <a href="#" id="promptSignup">Sign up</a> to contact us.
+      </div>
+
+      <!-- Contact form (visible only when signed in) -->
+      <div id="contactFormWrapper" class="hidden">
+        <h3>Contact Us</h3>
+        <form id="contactForm" class="contact-form">
+          <input type="text" placeholder="Your Name" required />
+          <input type="email" placeholder="Your Email" required />
+          <textarea rows="4" placeholder="Your Message..." required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+        <button id="logoutBtn" class="btn-secondary" style="margin-top:1rem;">Sign Out</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="builder.html">Builder</a>
+      <a href="tutorial.html">Tutorials</a>
+      <a href="games.html">Games</a>
+    </div>
+
+    <div class="footer-icons">
+      <span class="icon" title="Phone">📞</span>
+      <span class="icon" title="Email">✉️</span>
+      <span class="icon" title="LinkedIn">💼</span>
+    </div>
+
+    <p>&copy; 2025 CircuitCraft | Created by Rami Assi</p>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="js/main.js"></script>
+  <script type="text/babel" src="react-equations.jsx"></script>
+</body>
+</html>

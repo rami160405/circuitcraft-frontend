@@ -1,0 +1,913 @@
+/* ====================================================================== */
+/* ========== GLOBAL THEME & LAYOUT (applies to every page) ============= */
+/* ====================================================================== */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #0d1117;           /* dark canvas */
+  color: #f1f1f1;                /* readable text on dark bg */
+  line-height: 1.6;
+}
+
+/* ----- Header (sticky, with subtle border glow) ----- */
+header {
+  background: #0d1117;
+  border-bottom: 1px solid #00ffcc33;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 8%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header h1 {
+  color: #00ffcc;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-shadow: 0 0 8px #00ffcc66;
+}
+
+/* ----- Top navigation links ----- */
+.nav-links { list-style: none; display: flex; gap: 2rem; }
+
+.nav-links a {
+  color: #f1f1f1;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+/* Hover + active page state */
+.nav-links a:hover,
+.nav-links a.active {
+  color: #00ffcc;
+  text-shadow: 0 0 6px #00ffcc;
+}
+
+/* ----- Footer (consistent across pages) ----- */
+/* ================= ENHANCED FOOTER ================= */
+footer {
+  background: #0b0f14;
+  border-top: 1px solid #00ffcc33;
+  color: #00ffcc;
+  text-align: center;
+  padding: 2rem 1rem;
+  position: relative;
+  box-shadow: 0 -3px 20px rgba(0, 255, 204, 0.1);
+}
+
+footer p {
+  margin-bottom: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* Footer nav links */
+.footer-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.footer-links a {
+  color: #9bf8de;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+.footer-links a:hover {
+  color: #00ffcc;
+  text-shadow: 0 0 10px #00ffcc;
+}
+
+/* Social icons section */
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.8rem;
+  margin-top: 1rem;
+}
+
+/* Each icon container */
+.icon {
+  position: relative;
+  font-size: 1.4rem;
+  color: #9bf8de;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Hover glow + pop-up */
+.icon:hover {
+  color: #00ffcc;
+  transform: translateY(-5px) scale(1.15);
+  text-shadow: 0 0 12px #00ffcc;
+}
+
+/* Optional: subtle neon pulse for icons */
+@keyframes pulse {
+  0%, 100% { text-shadow: 0 0 10px rgba(0,255,204,0.3); }
+  50% { text-shadow: 0 0 20px rgba(0,255,204,0.6); }
+}
+.icon {
+  animation: pulse 3s infinite;
+}
+
+
+/* ====================================================================== */
+/* ======================= HOME PAGE (index) ============================ */
+/* ====================================================================== */
+
+/* Hero section: two-column flex layout */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7rem 10%;
+  gap: 4rem;
+  /* Decorative radial highlight */
+  background: radial-gradient(circle at 25% 40%, #0f2324 0%, transparent 60%), #0d1117;
+}
+
+.hero-left { flex: 1; text-align: left; max-width: 500px; }
+
+.hero-left h2 {
+  font-size: 3rem;
+  color: #00ffcc;
+  text-shadow: 0 0 20px rgba(0, 255, 204, 0.5);
+  margin-bottom: 1rem;
+}
+
+.hero-left p { color: #d8d8d8; font-size: 1.2rem; margin-bottom: 2rem; }
+
+/* Reusable “primary button” look */
+.btn {
+  display: inline-block;
+  background: linear-gradient(90deg, #00ffcc, #009977);
+  color: #0d1117;
+  padding: 1rem 2rem;
+  border-radius: 40px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 0 20px #00ffcc44;
+  transition: all 0.3s ease;
+}
+.btn:hover { transform: translateY(-3px); box-shadow: 0 0 25px #00ffcc; }
+
+.hero-right { flex: 1; display: flex; justify-content: center; align-items: center; }
+
+/* Hero illustration with soft neon pulse animation */
+.hero-image {
+  width: 85%;
+  max-width: 450px;
+  filter: drop-shadow(0 0 25px rgba(0, 255, 204, 0.35));
+  animation: neonPulse 4s ease-in-out infinite;
+}
+
+/* Feature cards grid */
+.features { text-align: center; padding: 5rem 8%; background: #0b0f14; }
+.features h2 { color: #00ffcc; font-size: 2.2rem; margin-bottom: 3rem; }
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2.5rem;
+}
+
+.feature-grid article {
+  background: #10161d;
+  border: 1px solid #00ffcc33;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 0 15px #00ffcc22;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.feature-grid article:hover { transform: translateY(-5px); box-shadow: 0 0 20px #00ffcc55; }
+.feature-grid h3 { color: #00ffcc; margin-bottom: 0.8rem; }
+.feature-grid p { color: #c9c9c9; font-size: 1rem; }
+
+/* Glow animation for hero image */
+@keyframes neonPulse {
+  0%   { filter: drop-shadow(0 0 10px rgba(0,255,204,.25)) drop-shadow(0 0 20px rgba(0,255,204,.35)) drop-shadow(0 0 40px rgba(0,255,204,.25)); }
+  50%  { filter: drop-shadow(0 0 25px rgba(0,255,204,.55)) drop-shadow(0 0 45px rgba(0,255,204,.45)) drop-shadow(0 0 70px rgba(0,255,204,.35)); }
+  100% { filter: drop-shadow(0 0 10px rgba(0,255,204,.25)) drop-shadow(0 0 20px rgba(0,255,204,.35)) drop-shadow(0 0 40px rgba(0,255,204,.25)); }
+}
+
+/* ====================================================================== */
+/* ======================= BUILDER PAGE (logic) ========================= */
+/* ====================================================================== */
+/* ========================================================= */
+/* =================== BUILDER PAGE (FINAL) ================= */
+/* ========================================================= */
+
+/* Page layout */
+body.builder-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: radial-gradient(circle at 30% 30%, #0f2324 0%, #0d1117 70%);
+  color: #f1f1f1;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Header + footer alignment */
+body.builder-page header {
+  flex-shrink: 0;
+}
+body.builder-page footer {
+  flex-shrink: 0;
+  margin-top: auto;
+  text-align: center;
+  background: #0b0f14;
+  border-top: 1px solid #00ffcc33;
+  padding: 1.5rem 0;
+  color: #00ffcc;
+  font-size: 0.9rem;
+}
+
+/* Center main section */
+.builder-modern {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+/* ========================================================= */
+/* ===================== SIGN-UP NOTICE ===================== */
+/* ========================================================= */
+.save-notice {
+  text-align: center;
+  margin: 1rem 0 2rem 0;
+  padding: 1rem 2rem;
+  background: #10161d;
+  border: 1px solid #00ffcc55;
+  border-radius: 12px;
+  color: #00ffcc;
+  box-shadow: 0 0 20px #00ffcc33;
+  font-size: 1rem;
+}
+.save-notice a {
+  color: #00ffcc;
+  font-weight: 600;
+  text-decoration: underline;
+}
+.save-notice a:hover {
+  color: #9bf8de;
+}
+.hidden {
+  display: none !important;
+}
+
+/* ========================================================= */
+/* ===================== BUILDER BOX ======================== */
+/* ========================================================= */
+.builder-box {
+  background: #10161d;
+  border: 1px solid #00ffcc33;
+  border-radius: 16px;
+  box-shadow: 0 0 25px #00ffcc22;
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 720px;
+  transition: 0.3s ease;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.builder-box h2 {
+  color: #00ffcc;
+  font-size: 1.9rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 12px rgba(0, 255, 204, 0.4);
+}
+.subtitle {
+  color: #9bded2;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ========================================================= */
+/* ===================== INPUT FIELD ======================== */
+/* ========================================================= */
+.eq-input {
+  width: 90%;
+  margin: 0 auto 1rem auto;
+  padding: 0.9rem 1.2rem;
+  border-radius: 10px;
+  border: 1px solid #00ffcc55;
+  background: #0b1116;
+  color: #00ffcc;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.25s ease;
+  text-align: center;
+}
+.eq-input:focus {
+  border-color: #00ffccaa;
+  box-shadow: 0 0 15px #00ffcc33;
+}
+
+/* ========================================================= */
+/* ================== COLLAPSIBLE OPERATORS ================= */
+/* ========================================================= */
+.collapsible {
+  margin-top: 1.2rem;
+  text-align: left;
+}
+.collapsible-toggle {
+  width: 100%;
+  background: linear-gradient(90deg, #00ffcc, #009977);
+  border: none;
+  border-radius: 40px;
+  color: #0d1117;
+  font-weight: 600;
+  text-align: center;
+  padding: 0.9rem 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: 0.3s ease;
+  box-shadow: 0 0 15px #00ffcc44;
+}
+.collapsible-toggle:hover {
+  box-shadow: 0 0 20px #00ffcc;
+  transform: translateY(-2px);
+}
+.collapsible-content {
+  display: none;
+  padding: 1rem 1.5rem;
+  font-size: 0.95rem;
+  background: #0b1116;
+  border-radius: 12px;
+  margin-top: 0.8rem;
+  border: 1px solid #00ffcc33;
+  box-shadow: 0 0 15px #00ffcc22;
+}
+.collapsible-content ul {
+  list-style: none;
+  padding-left: 0;
+  text-align: left;
+}
+.collapsible-content li {
+  margin: 0.4rem 0;
+  color: #9bded2;
+}
+
+/* ========================================================= */
+/* ======================= BUTTONS ========================== */
+/* ========================================================= */
+.builder-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.btn-primary, .btn-secondary {
+  border: none;
+  border-radius: 40px;
+  padding: 0.9rem 1.6rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.btn-primary {
+  background: linear-gradient(90deg, #00ffcc, #009977);
+  color: #0d1117;
+}
+.btn-secondary {
+  background: #0b1116;
+  border: 1px solid #00ffcc66;
+  color: #00ffcc;
+}
+.btn-primary:hover {
+  box-shadow: 0 0 20px #00ffccaa;
+}
+.btn-secondary:hover {
+  background: #00ffcc22;
+}
+
+/* --- BUTTON STATES (clean neon behavior) --- */
+button.active-mode {
+  background: linear-gradient(90deg, #00ffcc, #009977);
+  color: #0d1117;
+  box-shadow: 0 0 8px #00ffcc80;
+  transition: all 0.2s ease-in-out;
+}
+
+button.active-mode:hover {
+  box-shadow: 0 0 12px #00ffccbb;
+}
+
+button:not(.active-mode) {
+  background: #0b1116;
+  color: #00ffcc;
+  border: 1px solid #00ffcc66;
+  box-shadow: none;
+}
+
+/* --- OUTPUT CONTAINERS --- */
+
+.truth-container.glow:hover,
+.eval-container.glow:hover {
+  border-color: #00ffccaa;
+}
+
+/* ========================================================= */
+/* ================== VARIABLES & OUTPUT ==================== */
+/* ========================================================= */
+.vars-panel {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.var-card {
+  background: #0b1116;
+  border: 1px solid #00ffcc55;
+  border-radius: 12px;
+  width: 80px;
+  padding: 0.8rem;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.var-card.active {
+  background: #00ffcc;
+  color: #0d1117;
+  font-weight: 700;
+  box-shadow: 0 0 20px #00ffcc66;
+}
+.var-card:hover {
+  border-color: #00ffcc;
+}
+
+/* Output area */
+.output-box {
+  margin-top: 2rem;
+  background: #0b1116;
+  border-radius: 12px;
+  border: 1px solid #00ffcc33;
+  padding: 1.5rem;
+  box-shadow: 0 0 15px #00ffcc22;
+  overflow-x: auto;
+}
+.output-box table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+.output-box th, .output-box td {
+  border: 1px solid #00ffcc22;
+  padding: 0.5rem 0.8rem;
+  text-align: center;
+}
+.output-box th {
+  color: #00ffcc;
+  font-weight: 600;
+}
+.output-box td {
+  color: #9bded2;
+}
+
+/* Result glow */
+.truth-container.glow,
+.eval-container.glow {
+  box-shadow: 0 0 30px #00ffcc66;
+  border-radius: 12px;
+  padding: 1rem;
+  background: #0b1116;
+}
+
+/* ========================================================= */
+/* ====================== RESPONSIVE ======================== */
+/* ========================================================= */
+@media (max-width: 768px) {
+  .builder-box {
+    padding: 2rem 1rem;
+    width: 95%;
+  }
+  .save-notice {
+    width: 90%;
+    font-size: 0.9rem;
+  }
+}
+
+/* ====================================================================== */
+/* ======================= TUTORIALS PAGE =============================== */
+/* ====================================================================== */
+
+.tutorial-container { text-align: center; padding: 4rem 8%; }
+.tutorial-container h2 { color: #00ffcc; font-size: 2.4rem; margin-bottom: 0.5rem; }
+.tutorial-container p { color: #ccc; margin-bottom: 2rem; }
+
+/* Gate picker buttons */
+.gate-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-bottom: 3rem; }
+.gate-buttons button {
+  background: linear-gradient(90deg, #00ffcc, #009977);
+  border: none; color: #0d1117; font-weight: 600; padding: 0.8rem 1.5rem;
+  border-radius: 25px; cursor: pointer; transition: all 0.3s ease;
+}
+.gate-buttons button:hover { transform: translateY(-3px); box-shadow: 0 0 20px #00ffcc; }
+
+/* Gate info card (JS fills it) */
+.gate-info {
+  background: #10161d; border: 1px solid #00ffcc33; border-radius: 15px; padding: 2rem;
+  width: 90%; max-width: 700px; margin: 0 auto; box-shadow: 0 0 15px #00ffcc22; transition: all 0.3s ease;
+}
+.gate-info h3 { color: #00ffcc; font-size: 1.8rem; margin-bottom: 1rem; }
+.gate-info table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+.gate-info th, .gate-info td { border: 1px solid #00ffcc33; padding: 0.6rem; text-align: center; }
+.gate-info th { background: #00ffcc22; color: #00ffcc; }
+.gate-info td { color: #fff; }
+
+/* ====================================================================== */
+/* =========================== GAMES PAGE =============================== */
+/* ====================================================================== */
+
+/* Small banner at top showing score or sign-up CTA */
+.account-score {
+  position: absolute; top: 20px; right: 40px;
+  background: #0d1117; border: 1px solid #00ffcc55; border-radius: 10px;
+  padding: 0.5rem 1rem; font-size: 0.95rem; color: #00ffcc; box-shadow: 0 0 10px #00ffcc33;
+}
+.account-score a { color: #00ffcc; text-decoration: underline; font-weight: bold; }
+
+.arcade-container { text-align: center; padding: 4rem 8%; }
+
+/* Intro copy + button */
+.game-intro h2 { color: #00ffcc; font-size: 2.2rem; margin-bottom: 1rem; }
+.game-intro p { color: #ccc; margin-bottom: 2rem; font-size: 1.1rem; }
+
+/* Game card area */
+.game-area {
+  background: #10161d; border: 1px solid #00ffcc33; border-radius: 15px;
+  padding: 2rem; margin-top: 2rem; box-shadow: 0 0 20px #00ffcc22; color: #f1f1f1;
+}
+.hidden { display: none; }
+.play-again { margin-top: 2rem; }
+
+/* Table visuals (for truth-table game) */
+.game-area table { margin: 1.5rem auto; border-collapse: collapse; width: 80%; }
+.game-area th, .game-area td { border: 1px solid #00ffcc55; padding: 0.6rem 1rem; text-align: center; }
+.game-area th { background: #00ffcc22; color: #00ffcc; }
+
+/* Option buttons (answer choices) */
+.game-option {
+  background: #00ffcc22; color: #00ffcc; border: 1px solid #00ffcc55; border-radius: 10px;
+  padding: 0.6rem 1.2rem; margin: 0.5rem; cursor: pointer; transition: all 0.2s ease;
+}
+.game-option:hover { background: #00ffcc55; transform: translateY(-2px); }
+
+/* ====================================================================== */
+/* ===================== CONTACT / ACCOUNT PAGE ========================= */
+/* ====================================================================== */
+
+.account-container { padding: 3rem 8%; display: grid; gap: 3rem; justify-content: center; align-items: start; }
+
+/* --- Auth card with tabs --- */
+.auth-panel {
+  background: #10161d; border: 1px solid #00ffcc22; border-radius: 15px; padding: 2rem;
+  text-align: center; max-width: 500px; margin: 0 auto; box-shadow: 0 0 15px #00ffcc22;
+}
+
+.tabs { display: flex; justify-content: center; margin-bottom: 1rem; }
+.tabs button {
+  flex: 1; background: transparent; border: none; padding: 0.7rem; font-size: 1rem;
+  color: #ccc; cursor: pointer; border-bottom: 2px solid transparent; transition: 0.3s;
+}
+.tabs button.active { color: #00ffcc; border-color: #00ffcc; }
+
+.form { display: none; flex-direction: column; gap: 1rem; }
+.form.active { display: flex; }
+
+.form input, .form textarea {
+  padding: 0.9rem 1rem; border-radius: 8px; border: 1px solid #00ffcc55;
+  background: #0b1116; color: #f1f1f1; font-size: 0.95rem; width: 100%; box-sizing: border-box;
+}
+.form input:focus, .form textarea:focus { border-color: #00ffcc; box-shadow: 0 0 10px #00ffcc33; outline: none; }
+
+/* Password container with eye icon */
+.password-container {
+  position: relative;
+  width: 100%;
+}
+
+.password-container input {
+  padding-right: 3rem; /* Make room for eye icon */
+}
+
+.password-toggle {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #00ffcc;
+  user-select: none;
+  transition: all 0.3s ease;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+
+.password-toggle:hover {
+  color: #9bf8de;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.password-toggle.active {
+  color: #ffcc00;
+}
+
+.eye-icon {
+  width: 20px;
+  height: 20px;
+  transition: all 0.3s ease;
+}
+
+.password-toggle:hover .eye-icon {
+  transform: scale(1.1);
+}
+
+/* Password error messages */
+.password-error {
+  color: #ff5555;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  min-height: 1.2rem;
+  text-align: left;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #0b1116;
+  padding: 0.3rem 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ff5555;
+  z-index: 5;
+  box-shadow: 0 2px 8px rgba(255, 85, 85, 0.2);
+}
+
+.password-error.valid {
+  color: #00ffcc;
+  border-color: #00ffcc;
+  box-shadow: 0 2px 8px rgba(0, 255, 204, 0.2);
+}
+
+/* Ensure password container doesn't expand */
+.password-container {
+  position: relative;
+  width: 100%;
+  margin-bottom: 0; /* Remove default margin */
+}
+
+/* Add space for error messages without affecting layout */
+.form .password-container {
+  margin-bottom: 2rem; /* Reserve space for error messages */
+}
+
+.btn-primary, .form button {
+  background: linear-gradient(90deg, #00ffcc, #009977);
+  border: none; padding: 0.9rem; border-radius: 40px; font-weight: 600; color: #0d1117;
+  cursor: pointer; transition: all 0.3s;
+}
+.btn-primary:hover, .form button:hover { box-shadow: 0 0 20px #00ffcc; transform: translateY(-2px); }
+
+.btn-secondary {
+  background: #0b1116; color: #00ffcc; border: 1px solid #00ffcc55; border-radius: 40px;
+  padding: 0.8rem 1.2rem; cursor: pointer; transition: 0.3s;
+}
+.btn-secondary:hover { background: #00ffcc; color: #0b1116; box-shadow: 0 0 15px #00ffcc; }
+
+/* Dashboard area after login */
+.dashboard {
+  background: #10161d; border: 1px solid #00ffcc22; border-radius: 15px; padding: 2rem;
+  text-align: center; max-width: 600px; margin: 0 auto; box-shadow: 0 0 15px #00ffcc22;
+}
+.dashboard h2 { color: #00ffcc; }
+.saved-list { margin-top: 1rem; background: #0b1116; border-radius: 10px; padding: 1rem; text-align: left; border: 1px solid #00ffcc22; color: #ddd; }
+
+/* Welcome panel */
+.welcome-panel {
+  background: linear-gradient(135deg, #10161d, #0f2324); 
+  border: 2px solid #00ffcc55; 
+  border-radius: 20px; 
+  padding: 2.5rem; 
+  text-align: center; 
+  max-width: 700px; 
+  margin: 0 auto 2rem; 
+  box-shadow: 0 0 30px #00ffcc44;
+  animation: welcomeGlow 2s ease-in-out;
+}
+
+.welcome-panel h2 {
+  color: #00ffcc; 
+  font-size: 2.2rem; 
+  margin-bottom: 1rem; 
+  text-shadow: 0 0 20px rgba(0, 255, 204, 0.6);
+}
+
+.welcome-panel p {
+  color: #9bded2; 
+  font-size: 1.1rem;
+}
+
+@keyframes welcomeGlow {
+  0% { 
+    opacity: 0; 
+    transform: translateY(-20px); 
+    box-shadow: 0 0 10px #00ffcc22; 
+  }
+  100% { 
+    opacity: 1; 
+    transform: translateY(0); 
+    box-shadow: 0 0 30px #00ffcc44; 
+  }
+}
+
+/* Contact panel */
+.contact-panel {
+  background: #10161d; border: 1px solid #00ffcc22; border-radius: 15px; padding: 2rem;
+  text-align: center; max-width: 600px; margin: 0 auto 3rem; box-shadow: 0 0 15px #00ffcc22;
+}
+.contact-panel h3 { color: #00ffcc; margin-bottom: 1rem; font-size: 1.5rem; }
+.contact-text { color: #bbb; margin-bottom: 1.5rem; font-size: 0.95rem; }
+
+.contact-form { display: flex; flex-direction: column; gap: 1rem; align-items: center; }
+.contact-form input, .contact-form textarea {
+  width: 100%; max-width: 500px; padding: 0.9rem 1rem; border-radius: 8px; border: 1px solid #00ffcc55;
+  background: #0b1116; color: #f1f1f1; font-size: 0.95rem; box-sizing: border-box; resize: none;
+}
+.contact-form input:focus, .contact-form textarea:focus { border-color: #00ffcc; box-shadow: 0 0 10px #00ffcc33; outline: none; }
+.contact-form button {
+  background: linear-gradient(90deg, #00ffcc, #009977); border: none; padding: 0.9rem 2rem; border-radius: 40px; font-weight: 600; color: #0d1117; cursor: pointer; transition: all 0.3s;
+}
+.contact-form button:hover { box-shadow: 0 0 20px #00ffcc; transform: translateY(-2px); }
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .account-container { padding: 2rem 5%; gap: 2rem; }
+  .auth-panel, .contact-panel, .dashboard { padding: 1.5rem; }
+}
+/* ====================================================================== */
+/* =================== VIEWPORT CENTERING (TUTORIALS + GAMES) =========== */
+/* ====================================================================== */
+
+/* Make page fill full height */
+body.tutorials-page,
+body.games-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header stays on top */
+body.tutorials-page header,
+body.games-page header {
+  flex-shrink: 0;
+}
+
+/* Center all main content nicely */
+body.tutorials-page main,
+body.games-page main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+/* Footer stays at bottom always */
+body.tutorials-page footer,
+body.games-page footer {
+  margin-top: auto;
+  flex-shrink: 0;
+  text-align: center;
+  padding: 1rem 0;
+  background: #0b0f14;
+  border-top: 1px solid #00ffcc33;
+  color: #00ffcc;
+  font-weight: 500;
+  box-shadow: 0 -3px 10px rgba(0, 255, 204, 0.1);
+}
+
+/* Add subtle glow to centered sections for style */
+body.tutorials-page main > *,
+body.games-page main > * {
+  max-width: 800px;
+  width: 100%;
+}
+
+body.tutorials-page h1,
+body.games-page h1,
+body.tutorials-page h2,
+body.games-page h2 {
+  color: #00ffcc;
+  text-shadow: 0 0 15px rgba(0, 255, 204, 0.4);
+}
+
+/* Optional: center smaller content boxes */
+.tutorial-container,
+.arcade-container {
+  width: 100%;
+  max-width: 900px;
+  background: #10161d;
+  border: 1px solid #00ffcc33;
+  border-radius: 15px;
+  box-shadow: 0 0 20px #00ffcc22;
+  padding: 2rem;
+  margin: 2rem auto;
+}
+
+/* ========================================================= */
+/* ========== SAVED EQUATIONS LIST STYLING ================= */
+/* ========================================================= */
+.saved-equations-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.saved-equation-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: rgba(0, 255, 204, 0.05);
+  border: 1px solid #00ffcc33;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.saved-equation-item:hover {
+  background: rgba(0, 255, 204, 0.1);
+  border-color: #00ffcc55;
+  transform: translateX(4px);
+}
+
+.equation-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: linear-gradient(135deg, #00ffc3, #009977);
+  color: #0d1117;
+  border-radius: 50%;
+  font-size: 0.85rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.saved-equation-text {
+  color: #00ffc3;
+  font-size: 1rem;
+  font-family: 'Courier New', monospace;
+  flex: 1;
+  word-break: break-word;
+}
+
+.saved-equation-steps {
+  color: #9bded2;
+  font-size: 0.9rem;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid #00ffcc22;
+}
+
+/* ========================================================= */
+/* ========== GAMES PAGE SCORE INFO CENTERING ============== */
+/* ========================================================= */
+.score-info {
+  text-align: center;
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+  color: #00ffc3;
+}

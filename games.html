@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta + title -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CircuitCraft | Arcade</title>
+
+  <!-- Global styles -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="games-page">
+  <!-- ===== HEADER (title + score banner + nav) ===== -->
+  <header>
+    <h1>CircuitCraft Arcade</h1>
+
+    <!-- Score / sign-in info (filled by JS based on localStorage) -->
+    <div id="scoreInfo" class="score-info"></div>
+
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="builder.html">Builder</a></li>
+        <li><a href="tutorial.html">Tutorials</a></li>
+        <li><a href="games.html" class="active">Games</a></li>
+        <li><a href="contact.html" id="accountLink">Account</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== MAIN (game launcher + container) ===== -->
+  <main class="arcade-container">
+    <!-- Game intro & start button -->
+    <section id="gameIntro" class="game-intro">
+      <h2>Welcome to CircuitCraft Arcade 🎮</h2>
+      <p>Test your logic skills across four mini-games! Click play to start a random challenge.</p>
+      <button id="startGame" class="btn">Play</button>
+    </section>
+
+    <!-- Dynamic game area: JS injects the chosen game UI here -->
+    <section id="gameArea" class="game-area hidden"></section>
+
+    <!-- Play-again control becomes visible after a round ends -->
+    <div id="playAgain" class="play-again hidden">
+      <button class="btn">Play Again</button>
+    </div>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+   <footer>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="builder.html">Builder</a>
+    <a href="tutorial.html">Tutorials</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <div class="footer-icons">
+    <span class="icon" title="Phone">📞</span>
+    <span class="icon" title="Email">✉️</span>
+    <span class="icon" title="LinkedIn">💼</span>
+  </div>
+
+  <p>&copy; 2025 CircuitCraft | Created by Rami Assi</p>
+
+  </footer>
+
+  <!-- Behavior scripts: random game logic + scoring -->
+  <script src="config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

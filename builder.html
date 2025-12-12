@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CircuitCraft | Builder</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body class="builder-page">
+  <!-- ===== HEADER ===== -->
+  <header>
+    <h1>CircuitCraft Builder</h1>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="builder.html" class="active">Builder</a></li>
+        <li><a href="tutorial.html">Tutorials</a></li>
+        <li><a href="games.html">Games</a></li>
+        <li><a href="contact.html" id="accountLink">Account</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== MAIN ===== -->
+  <main class="builder-modern">
+    <!-- Sign-up notice (auto hides if signed in) -->
+    <div id="saveNotice" class="save-notice hidden">
+      <a href="contact.html">Sign up</a> to save equations.
+    </div>
+
+    <!-- Builder tool -->
+    <section class="builder-box">
+      <h2>⚙️ Boolean Equation Builder</h2>
+      <p class="subtitle">Enter your Boolean equation below and generate its truth table or evaluate it interactively.</p>
+
+      <input type="text" id="eqInput" class="eq-input" placeholder="Example: (A' AND B) OR C" maxlength="100" />
+
+      <div class="builder-buttons">
+        <button id="btnBuildTable" class="btn-primary">Generate Truth Table</button>
+        <button id="btnEvalPoint" class="btn-secondary">Evaluate Inputs</button>
+        <button id="saveEquationBtn" class="btn-secondary save-btn">Save Equation</button>
+        <button id="viewEquationsBtn" class="btn-secondary view-btn">View Saved Equations</button>
+      </div>
+
+      <div id="varsPanel" class="vars-panel"></div>
+      <div id="outputArea" class="output-box"></div>
+
+      <button id="toggleOps" class="collapsible-toggle">Show Supported Operators ⯆</button>
+      <div id="opsList" class="collapsible-content">
+        <ul>
+          <li><code>'</code> or <code>!</code> — NOT</li>
+          <li><code>AND</code> or <code>&amp;</code> — Logical AND</li>
+          <li><code>OR</code> or <code>+</code> or <code>|</code> — Logical OR</li>
+          <li><code>XOR</code> or <code>^</code> — Exclusive OR</li>
+          <li><code>NAND</code>, <code>NOR</code>, <code>XNOR</code> — Variants</li>
+          <li>Use parentheses <code>( )</code> for grouping</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="tutorial.html">Tutorials</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <div class="footer-icons">
+    <span class="icon" title="Phone">📞</span>
+    <span class="icon" title="Email">✉️</span>
+    <span class="icon" title="LinkedIn">💼</span>
+  </div>
+
+  <p>&copy; 2025 CircuitCraft | Created by Rami Assi</p>
+
+  </footer>
+
+  <!-- JS -->
+  <script src="config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

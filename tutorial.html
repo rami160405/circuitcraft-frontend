@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta basics -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>CircuitCraft | Tutorials</title>
+
+  <!-- Global stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="tutorials-page">    
+  <!-- ===== HEADER (site nav) ===== -->
+  <header>
+    <h1>CircuitCraft Tutorials</h1>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="builder.html">Builder</a></li>
+        <li><a href="tutorial.html" class="active">Tutorials</a></li>
+        <li><a href="games.html">Games</a></li>
+        <li><a href="contact.html" id="accountLink">Account</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== MAIN (interactive tutorial panel) ===== -->
+  <main>
+    <section class="tutorial-container">
+      <!-- Intro copy -->
+      <h2>Logic Gate Tutorials</h2>
+      <p>Select a gate to learn how it works:</p>
+
+      <!-- Buttons to pick a logic gate (JS fills content below) -->
+      <div class="gate-buttons">
+        <button class="tutorial-btn" data-type="AND">AND</button>
+        <button class="tutorial-btn" data-type="OR">OR</button>
+        <button class="tutorial-btn" data-type="XOR">XOR</button>
+        <button class="tutorial-btn" data-type="NOT">NOT</button>
+        <button class="tutorial-btn" data-type="NAND">NAND</button>
+        <button class="tutorial-btn" data-type="NOR">NOR</button>
+        <button class="tutorial-btn" data-type="XNOR">XNOR</button>
+      </div>
+
+      <!-- Dynamic display area: JS injects text + small truth table -->
+      <div id="tutorialDisplay" class="gate-info">
+        <p>Select a logic gate above to view details.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+   <footer>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="builder.html">Builder</a>
+    <a href="games.html">Games</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <div class="footer-icons">
+    <span class="icon" title="Phone">📞</span>
+    <span class="icon" title="Email">✉️</span>
+    <span class="icon" title="LinkedIn">💼</span>
+  </div>
+
+  <p>&copy; 2025 CircuitCraft | Created by Rami Assi</p>
+
+  </footer>
+
+  <!-- Behavior script populates the tutorials -->
+  <script src="config.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>
