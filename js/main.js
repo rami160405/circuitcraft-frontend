@@ -10,26 +10,10 @@
 
 // CircuitCraft JS loaded
 
-// API base URL - automatically detect if running locally or in production
+// API base URL - use relative URLs (proxied through Vercel to Railway backend)
 const getBackendUrl = (path) => {
-  // Check if API_CONFIG is set (for production deployments)
-  if (window.API_CONFIG && window.API_CONFIG.BACKEND_URL) {
-    return `${window.API_CONFIG.BACKEND_URL}${path}`;
-  }
-  
-  // Check if running on localhost (development)
-  const isLocalhost = window.location.hostname === 'localhost' || 
-                      window.location.hostname === '127.0.0.1' ||
-                      window.location.hostname === '';
-  
-  if (isLocalhost) {
-    // Use local backend server
-    return `http://localhost:5000${path}`;
-  } else {
-    // Fallback: Use production backend API (update this with your Railway URL)
-    // This will be overridden by config.js if BACKEND_URL is set
-    return `https://circuitcraftramiassi.onrender.com${path}`;
-  }
+  // Always use relative URLs - Vercel will proxy /api/* to Railway backend
+  return path;
 };
 
 // Route by filename

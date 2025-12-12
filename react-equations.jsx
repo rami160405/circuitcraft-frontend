@@ -1,9 +1,9 @@
 const { useState, useEffect } = React;
 
-// API base URL - always use production backend
+// API base URL - use relative URLs (proxied through Vercel to Railway backend)
 const getAPIUrl = (path) => {
-  // Always use the production backend API
-  return `https://circuitcraftramiassi.onrender.com${path}`;
+  // Always use relative URLs - Vercel will proxy /api/* to Railway backend
+  return path;
 };
 
 function SavedEquations({ token }) {
